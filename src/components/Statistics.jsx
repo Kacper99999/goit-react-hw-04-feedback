@@ -2,9 +2,10 @@ import React from "react"
 import '/src/components/styles.css';
 import propTypes from "prop-types";
 
-export default function Statistics({good, neutral, bad, total, positivePercentage}){
+export default function Statistics({good, neutral, bad, total, positivePercentage }){
+    
     return(
-        <div className={total === 0 ? "stat-non" : "stat-yes"}>
+        <div style={{display : total === 0 ? "none" : "block"}}>
             <p>Good : {good}</p>
             <p>Neutral : {neutral}</p>
             <p>Bad : {bad}</p>
@@ -17,6 +18,6 @@ Statistics.propTypes = {
     good : propTypes.number,
     neutral : propTypes.number,
     bad : propTypes.number,
-    total : propTypes.number.isRequired,
+    total : propTypes.number,
     positivePercentage : propTypes.number.isRequired
 }
